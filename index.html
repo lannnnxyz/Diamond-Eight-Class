@@ -326,11 +326,18 @@
                     </div>
                     <div class="sm:col-span-3">
                         <select id="task-subject" class="w-full px-3.5 py-2.5 rounded-xl bg-cybercard border border-white/[0.08] text-sm text-white focus:outline-none focus:border-neoncyan transition-all">
+                            <option value="Agama Hindu">Agama Hindu</option>
+                            <option value="Bahasa Bali">Bahasa Bali</option>
+                            <option value="Bahasa Inggris">Bahasa Inggris</option>
+                            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Informatika">Informatika</option>
+                            <option value="IPA">IPA</option>
+                            <option value="IPS">IPS</option>
                             <option value="Matematika">Matematika</option>
-                            <option value="Fisika">Fisika</option>
-                            <option value="Kimia">Kimia</option>
-                            <option value="Biologi">Biologi</option>
-                            <option value="Bahasa">Bahasa</option>
+                            <option value="Pendidikan Pancasila">Pendidikan Pancasila</option>
+                            <option value="PJOK">PJOK</option>
+                            <option value="Seni Budaya">Seni Budaya</option>
                             <option value="Pengumuman">Pengumuman Kelas</option>
                         </select>
                     </div>
@@ -630,14 +637,14 @@
 
         let currentDay = 'Senin';
         let currentTaskFilter = 'all';
-        let tasks = safeGetStorage('kelas_cyber_tasks_v9', [
-            { id: 1, title: 'Laporan Praktikum Fisika (Ayunan Bandul)', subject: 'Fisika', priority: 'Mendesak', deadline: '2026-11-18', completed: false },
+        let tasks = safeGetStorage('kelas_cyber_tasks_v10', [
+            { id: 1, title: 'Laporan Praktikum Fisika (Ayunan Bandul)', subject: 'IPA', priority: 'Mendesak', deadline: '2026-11-18', completed: false },
             { id: 2, title: 'Latihan Soal Integral Tentu Hal. 45', subject: 'Matematika', priority: 'Penting', deadline: '2026-11-17', completed: false },
             { id: 3, title: 'Pengumpulan Uang Kas (Rp 20.000)', subject: 'Pengumuman', priority: 'Normal', deadline: '2026-11-20', completed: false }
         ]);
 
         function saveTasks() {
-            safeSetStorage('kelas_cyber_tasks_v9', tasks);
+            safeSetStorage('kelas_cyber_tasks_v10', tasks);
             updateActiveTaskStat();
         }
 
@@ -673,8 +680,8 @@
             const footerInfoEl = document.getElementById('footer-class-info');
 
             try {
-                const sTitle = localStorage.getItem('kelas_cyber_title_v9');
-                const sMotto = localStorage.getItem('kelas_cyber_motto_v9');
+                const sTitle = localStorage.getItem('kelas_cyber_title_v10');
+                const sMotto = localStorage.getItem('kelas_cyber_motto_v10');
                 if (sTitle) { 
                     titleEl.textContent = sTitle; 
                     navTitleEl.textContent = sTitle.split('-')[0].trim(); 
@@ -688,7 +695,7 @@
                 titleEl.textContent = val;
                 navTitleEl.textContent = val.split('-')[0].trim();
                 footerInfoEl.textContent = `${val.split('-')[0].trim()} • Cyberpunk Theme`;
-                try { localStorage.setItem('kelas_cyber_title_v9', val); } catch (e) {}
+                try { localStorage.setItem('kelas_cyber_title_v10', val); } catch (e) {}
                 showToast('Nama kelas diperbarui');
             });
             titleEl.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); titleEl.blur(); } });
@@ -696,7 +703,7 @@
             mottoEl.addEventListener('blur', () => {
                 const val = mottoEl.textContent.trim() || '"Inovasi Tanpa Batas."';
                 mottoEl.textContent = val;
-                try { localStorage.setItem('kelas_cyber_motto_v9', val); } catch (e) {}
+                try { localStorage.setItem('kelas_cyber_motto_v10', val); } catch (e) {}
                 showToast('Moto kelas diperbarui');
             });
             mottoEl.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); mottoEl.blur(); } });

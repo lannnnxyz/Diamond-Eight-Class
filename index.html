@@ -44,7 +44,7 @@
             position: relative;
         }
 
-        /* GPU-Accelerated Moving Gradient Layer (Tanpa Repaint Berat) */
+        /* GPU-Accelerated Moving Gradient Layer */
         body::before {
             content: "";
             position: fixed;
@@ -63,7 +63,7 @@
             100% { transform: translate3d(5%, 5%, 0) scale(1.06); }
         }
 
-        /* Optimized Ambient Orbs using Radial Gradient instead of Heavy CSS Blur */
+        /* Optimized Ambient Orbs */
         .ambient-orb {
             position: fixed;
             border-radius: 50%;
@@ -107,7 +107,7 @@
             will-change: transform;
         }
 
-        /* Optimized Glassmorphism Blue Card (Tampilan Identik, Jauh Lebih Ringan) */
+        /* Optimized Glassmorphism Blue Card */
         .blue-card {
             background: rgba(11, 19, 43, 0.88);
             backdrop-filter: blur(8px);
@@ -121,7 +121,6 @@
             box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.28), 0 0 18px rgba(56, 189, 248, 0.14);
         }
 
-        /* Kartu kecil di dalam list tidak perlu backdrop-filter berlapis */
         .blue-card-inner {
             background: rgba(11, 19, 43, 0.85);
             border: 1px solid rgba(56, 189, 248, 0.2);
@@ -201,7 +200,7 @@
                     <a href="#jadwal" data-section="jadwal" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all">Jadwal & Piket</a>
                     <a href="#tugas" data-section="tugas" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all">Papan Tugas</a>
                     <a href="#anggota" data-section="anggota" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all">Pengurus & Siswa</a>
-                    <a href="#galeri" data-section="galeri" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all">Galeri</a>
+                    <a href="#info" data-section="info" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all">Info & Dokumen</a>
                 </div>
 
                 <!-- Right Action -->
@@ -222,7 +221,7 @@
             <a href="#jadwal" class="mobile-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-skyblue hover:bg-white/[0.08]">Jadwal Pelajaran & Piket</a>
             <a href="#tugas" class="mobile-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-skyblue hover:bg-white/[0.08]">Papan Tugas & Pengumuman</a>
             <a href="#anggota" class="mobile-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-skyblue hover:bg-white/[0.08]">Struktur & Direktori Siswa</a>
-            <a href="#galeri" class="mobile-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-skyblue hover:bg-white/[0.08]">Galeri Momen Kelas</a>
+            <a href="#info" class="mobile-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-skyblue hover:bg-white/[0.08]">Info Guru & Dokumen Kelas</a>
         </div>
     </nav>
 
@@ -471,18 +470,73 @@
             </div>
         </section>
 
-        <!-- 5. GALERI MOMEN KELAS -->
-        <section id="galeri" class="scroll-mt-24">
-            <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <!-- 5. INFO GURU & DOKUMEN KELAS (PENGGANTI GALERI) -->
+        <section id="info" class="scroll-mt-24 space-y-8">
+            <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-skyblue">Arsip Kebersamaan</span>
-                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Galeri Momen Kelas</h2>
-                    <p class="text-sm text-slate-300 mt-1">Koleksi foto kegiatan dan prestasi berharga kelas kita.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-skyblue">Pusat Informasi & Berkas</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Daftar Guru Pengampu & Dokumen Kelas</h2>
+                    <p class="text-sm text-slate-300 mt-1">Informasi penting mengenai tenaga pengajar mata pelajaran dan file berkas kelas.</p>
                 </div>
             </div>
 
-            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Rendered via JS -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Teachers Directory (7 Col) -->
+                <div class="reveal blue-card lg:col-span-7 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <h3 class="font-display font-bold text-lg text-white flex items-center gap-2.5 mb-6">
+                        <svg class="w-5 h-5 text-skyblue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+                        Daftar Guru Mata Pelajaran
+                    </h3>
+                    <div class="space-y-3" id="teachers-list">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- Class Documents & Links (5 Col) -->
+                <div class="reveal lg:col-span-5 space-y-6" style="transition-delay: 150ms;">
+                    <div class="blue-card rounded-3xl p-6 sm:p-7 shadow-xl">
+                        <h3 class="font-display font-bold text-lg text-white flex items-center gap-2.5 mb-4">
+                            <svg class="w-5 h-5 text-skyblue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            Berkas & Link Penting Kelas
+                        </h3>
+                        <p class="text-xs text-slate-300 mb-5">Akses cepat ke tautan modul, inventaris kelas, dan peraturan tata tertib.</p>
+                        
+                        <div class="space-y-3">
+                            <a href="#tugas" class="flex items-center justify-between p-3.5 rounded-2xl blue-card-inner group hover:border-skyblue/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-skyblue/10 text-skyblue flex items-center justify-center font-bold text-xs">PDF</div>
+                                    <div>
+                                        <h4 class="font-semibold text-sm text-white group-hover:text-skyblue transition">Tata Tertib & Aturan Kelas</h4>
+                                        <p class="text-[11px] text-slate-400">Diperbarui untuk Semester Genap</p>
+                                    </div>
+                                </div>
+                                <svg class="w-4 h-4 text-slate-400 group-hover:text-skyblue group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+
+                            <a href="#tugas" class="flex items-center justify-between p-3.5 rounded-2xl blue-card-inner group hover:border-skyblue/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-electricblue/20 text-electricblue flex items-center justify-center font-bold text-xs">XLS</div>
+                                    <div>
+                                        <h4 class="font-semibold text-sm text-white group-hover:text-skyblue transition">Rekapitulasi Keuangan Kas Kelas</h4>
+                                        <p class="text-[11px] text-slate-400">Laporan Saldo & Pengeluaran</p>
+                                    </div>
+                                </div>
+                                <svg class="w-4 h-4 text-slate-400 group-hover:text-skyblue group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+
+                            <a href="#tugas" class="flex items-center justify-between p-3.5 rounded-2xl blue-card-inner group hover:border-skyblue/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center font-bold text-xs">DOC</div>
+                                    <div>
+                                        <h4 class="font-semibold text-sm text-white group-hover:text-skyblue transition">Daftar Inventaris Ruang Kelas</h4>
+                                        <p class="text-[11px] text-slate-400">Peralatan & Kebersihan</p>
+                                    </div>
+                                </div>
+                                <svg class="w-4 h-4 text-slate-400 group-hover:text-skyblue group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -551,6 +605,21 @@
             { day: 'Sabtu', members: ['Sandi Putra', 'Suwantana', 'Adi Sindhu', 'Melody', 'Vikayanti'] }
         ];
 
+        const teachersData = [
+            { subject: 'Wali Kelas & IPA', name: 'Sukamti, S.Pd.Bio' },
+            { subject: 'Matematika', name: 'I Gede Ferry Artha, S.Pd' },
+            { subject: 'Bahasa Indonesia & Kokurikuler', name: 'Made Anggreani, SH' },
+            { subject: 'Bahasa Inggris', name: 'Putu Dana Kartika, S.Pd' },
+            { subject: 'IPS & Kokurikuler', name: 'Ayuning Tyasnasari, S.Pd' },
+            { subject: 'Informatika & Kokurikuler', name: 'I Wayan Yasana, S.Pd' },
+            { subject: 'Agama Hindu', name: 'Komang Ayu Mustarini, S.Pd' },
+            { subject: 'Pendidikan Pancasila', name: 'Ni Nyoman Muliati, S.Pd' },
+            { subject: 'Bahasa Bali', name: 'Ni Luh Putu Sri Darmayanti, S.Pd.B' },
+            { subject: 'Coding', name: 'Deni Zulharmain, S.Pd' },
+            { subject: 'Seni Budaya', name: 'Ni Putu Sri Astuti, S.Pd' },
+            { subject: 'PJOK', name: 'I Putu Teja Wijana, S.Pd & I Putu Ayusnadi, S.Pd' }
+        ];
+
         const officerIcons = {
             award: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
             crown: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>',
@@ -603,42 +672,6 @@
             { absen: '31', name: 'Ni Nyoman Monika Lestari', role: 'Anggota Kelas' }
         ];
 
-        function createBlueArtwork(theme, subtitle) {
-            const themes = {
-                trophy: { bg1: '#0F172A', bg2: '#030712', icon: `<path d="M16 12h48v24c0 13.25-10.75 24-24 24S16 49.25 16 36V12z" fill="rgba(56,189,248,0.15)" stroke="#38BDF8" stroke-width="3"/><path d="M16 20H6c0 11 4.5 18 10 18M64 20h10c0 11-4.5 18-10 18" stroke="#38BDF8" stroke-width="3" fill="none"/><path d="M40 60v18M24 78h32" stroke="#38BDF8" stroke-width="3"/>` },
-                lab: { bg1: '#1E3A8A', bg2: '#030712', icon: `<path d="M30 12h20M34 12v22L16 68c-2 4 1 10 6 10h36c5 0 8-6 6-10L46 34V12" stroke="#38BDF8" stroke-width="3" fill="rgba(56,189,248,0.15)"/><path d="M22 56h36l6 12c2 4-1 10-6 10H22c-5 0-8-6-6-10l6-12z" fill="rgba(255,255,255,0.2)" stroke="#FFFFFF" stroke-width="2"/>` },
-                sport: { bg1: '#1E293B', bg2: '#030712', icon: `<circle cx="40" cy="45" r="32" fill="rgba(59,130,246,0.15)" stroke="#3B82F6" stroke-width="3"/><polygon points="40,27 54,37 49,54 31,54 26,37" fill="rgba(56,189,248,0.2)" stroke="#38BDF8" stroke-width="2"/>` },
-                campus: { bg1: '#0B132B', bg2: '#030712', icon: `<polygon points="40,14 74,30 40,46 6,30" fill="rgba(56,189,248,0.2)" stroke="#38BDF8" stroke-width="3"/><path d="M18 36v22c0 8 44 8 44 0V36M70 32v24" stroke="#38BDF8" stroke-width="3" fill="none"/>` },
-                heart: { bg1: '#172554', bg2: '#030712', icon: `<path d="M40 72S12 53 12 31a16 16 0 0 1 28-10.5A16 16 0 0 1 68 31c0 22-28 41-28 41z" fill="rgba(255,255,255,0.2)" stroke="#FFFFFF" stroke-width="3"/>` },
-                camera: { bg1: '#0F172A', bg2: '#030712', icon: `<rect x="8" y="22" width="64" height="46" rx="10" fill="rgba(56,189,248,0.15)" stroke="#38BDF8" stroke-width="3"/><path d="M26 22l5-10h18l5 10" stroke="#38BDF8" stroke-width="3" fill="none"/><circle cx="40" cy="45" r="13" fill="rgba(255,255,255,0.2)" stroke="#FFFFFF" stroke-width="3"/>` }
-            };
-            const t = themes[theme] || themes.camera;
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-                <defs>
-                    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="${t.bg1}"/>
-                        <stop offset="100%" stop-color="${t.bg2}"/>
-                    </linearGradient>
-                </defs>
-                <rect width="800" height="450" fill="url(#g)"/>
-                <rect x="24" y="24" width="752" height="402" rx="20" fill="none" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1.5"/>
-                <circle cx="400" cy="188" r="72" fill="#030712" fill-opacity="0.6" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1.5"/>
-                <g transform="translate(360, 145)">${t.icon}</g>
-                <text x="400" y="305" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="22" font-weight="700">${subtitle}</text>
-                <text x="400" y="335" text-anchor="middle" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3">ELITE BLUE ARCHIVE • Diamond Eight-Class</text>
-            </svg>`;
-            return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-        }
-
-        const galleryItems = [
-            { id: 101, category: 'Prestasi', title: 'Juara 1 Lomba Cerdas Cermat Sains', date: '14 Oktober 2026', desc: 'Perwakilan Diamond Eight-Class berhasil membawa pulang piala bergilir tingkat provinsi.', img: createBlueArtwork('trophy', 'Juara 1 Cerdas Cermat Sains') },
-            { id: 102, category: 'Kegiatan', title: 'Praktikum Kimia Bersama di Lab', date: '28 September 2026', desc: 'Momen keseruan eksperimen titrasi asam basa.', img: createBlueArtwork('lab', 'Eksperimen Laboratorium Kimia') },
-            { id: 103, category: 'Kebersamaan', title: 'Classmeeting & Futsal Cup 2026', date: '19 Agustus 2026', desc: 'Kekompakan suporter dan pemain di lapangan membawa gelar juara.', img: createBlueArtwork('sport', 'Classmeeting & Futsal Cup') },
-            { id: 104, category: 'Kegiatan', title: 'Study Tour & Kunjungan Kampus', date: '12 Juli 2026', desc: 'Mengunjungi fakultas teknik dan kedokteran untuk memotivasi masa depan.', img: createBlueArtwork('campus', 'Kunjungan Kampus Impian') },
-            { id: 105, category: 'Kebersamaan', title: 'Perayaan Hari Guru Nasional', date: '25 November 2025', desc: 'Kejutan spesial untuk Sukamti, S.Pd.Bio selaku wali kelas tercinta.', img: createBlueArtwork('heart', 'Apresiasi Hari Guru Nasional') },
-            { id: 106, category: 'Kebersamaan', title: 'Foto Buku Tahunan Angkatan', date: '03 November 2026', desc: 'Sesi pemotretan bertema Blue Neon di galeri kota.', img: createBlueArtwork('camera', 'Pemotretan Buku Tahunan') }
-        ];
-
         function safeGetStorage(key, fallback) {
             try {
                 const raw = localStorage.getItem(key);
@@ -677,7 +710,7 @@
         function initScrollProgressAndActiveNav() {
             const progressBar = document.getElementById('scroll-progress');
             const navLinks = document.querySelectorAll('.nav-link');
-            const sections = ['jadwal', 'tugas', 'anggota', 'galeri'].map(id => document.getElementById(id)).filter(Boolean);
+            const sections = ['jadwal', 'tugas', 'anggota', 'info'].map(id => document.getElementById(id)).filter(Boolean);
             let ticking = false;
 
             window.addEventListener('scroll', () => {
@@ -991,23 +1024,20 @@
 
         document.getElementById('member-search').addEventListener('input', e => renderMembers(e.target.value));
 
-        function renderGallery() {
-            document.getElementById('gallery-grid').innerHTML = galleryItems.map((item, idx) => `
-                <div class="reveal blue-card-inner group rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2.5" style="transition-delay: ${(idx % 3) * 60}ms;">
-                    <div class="aspect-video w-full overflow-hidden bg-bluedark relative">
-                        <img src="${item.img}" alt="${escapeHTML(item.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-bluedark/80 border border-skyblue/40 text-[11px] font-semibold text-skyblue">
-                            ${escapeHTML(item.category)}
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <div class="text-xs font-semibold text-skyblue mb-1">${escapeHTML(item.date)}</div>
-                        <h3 class="font-display font-bold text-lg text-white group-hover:text-skyblue transition-colors line-clamp-1">${escapeHTML(item.title)}</h3>
-                        <p class="text-xs text-slate-300 mt-1.5 line-clamp-2 leading-relaxed">${escapeHTML(item.desc)}</p>
+        function renderTeachers() {
+            document.getElementById('teachers-list').innerHTML = teachersData.map((t, idx) => `
+                <div class="flex items-center justify-between p-3.5 rounded-2xl blue-card-inner border border-white/[0.06] hover:border-skyblue/40 transition">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-xl bg-skyblue/10 text-skyblue flex items-center justify-center font-bold text-xs">
+                            ${idx + 1}
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm text-white">${escapeHTML(t.name)}</h4>
+                            <p class="text-xs text-skyblue">${escapeHTML(t.subject)}</p>
+                        </div>
                     </div>
                 </div>
             `).join('');
-            observeNewReveals();
         }
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1037,7 +1067,7 @@
             renderTasks();
             renderOfficers();
             renderMembers();
-            renderGallery();
+            renderTeachers();
             initScrollAnimations();
             initScrollProgressAndActiveNav();
         }
